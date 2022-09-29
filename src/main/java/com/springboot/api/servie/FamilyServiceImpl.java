@@ -22,4 +22,11 @@ public class FamilyServiceImpl implements FamilyService {
 		return "Data successfully inserted";
 	}
 
+	@Override
+	public FamilyDetails getFamilyDetailsByname(String name) {
+		logger.info("Name in Service layer::"+name);
+		FamilyDetails response=familyRepository.findByname(name);
+		return response;
+	}
+
 }
